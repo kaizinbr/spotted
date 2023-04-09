@@ -1,0 +1,45 @@
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file! Do not edit.
+
+# Domain	Subdomain	Path	Secure	Expire	Name	Value
+.open.spotify.com	TRUE	/	FALSE	1704937687	_pin_unauth	dWlkPVlqUm1NV1poTmpNdE9UWTFNaTAwTmpOa0xXSXlZMk10TVdWbVpXRTBZbUkxTmpObA
+.spotify.com	TRUE	/	TRUE	1712344806	sp_t	952c46a4b5586194393dc0f2ca9bac5b
+.spotify.com	TRUE	/	TRUE	1712344810	sp_adid	eeede945-b626-4a8f-aa46-0cdf1a442c00
+.spotify.com	TRUE	/	FALSE	1688584811	_fbp	fb.1.1668122649815.526781998
+.spotify.com	TRUE	/	TRUE	1699658661	sp_dc	AQAIAgy3qAtSFgUjgEyraKIX98kygXmKNYwI-JmNRpRgbbW4cbkylfYNfiTZ3_SYuhC6r1S0siSycxHmobjWnHBnPWItJ7S0Z30FUNsDhUF3dLppj65Mm1gCChf0qtBNpSzm3a_gAtVykVTtD2TNsWmGu3PeZ4c
+.spotify.com	TRUE	/	TRUE	1699658661	sp_key	5bdf7383-4a8e-4ca3-8d0b-7403249de86f
+.spotify.com	TRUE	/	TRUE	1680897427	sp_last_utm	%7B%22utm_campaign%22%3A%22your_account%22%2C%22utm_medium%22%3A%22menu%22%2C%22utm_source%22%3A%22spotify%22%7D
+.spotify.com	TRUE	/	FALSE	1707552384	_scid	1cfdec95-8fcd-475e-8734-0661c9d90eb8
+.spotify.com	TRUE	/	FALSE	1707529686	_cs_c	0
+.spotify.com	TRUE	/	FALSE	1709409410	_tt_enable_cookie	1
+.spotify.com	TRUE	/	FALSE	1709409410	_ttp	HslqKh0dgmEmsaiQ_iFwuCdN7Z7
+.spotify.com	TRUE	/	TRUE	1704901767	_hjSessionUser_309589	eyJpZCI6IjUzMTU4YTgyLWVkYzQtNTNlMC04ZWI4LTVlNTc4MjlkOTk0ZiIsImNyZWF0ZWQiOjE2NzMzNjU3Njc1NDMsImV4aXN0aW5nIjpmYWxzZX0=
+.spotify.com	TRUE	/	FALSE	1682567169	_gcl_au	1.1.490371459.1674791169
+.spotify.com	TRUE	/	FALSE	1709738524	_ga_C8KXF15P07	GS1.1.1675178313.2.1.1675178524.0.0.0
+.spotify.com	TRUE	/	FALSE	1707249517	__kdtv	t%3D1675713516556%3Bi%3D378a221f6b562d53a442b7f1b73de2f088560d36
+.spotify.com	TRUE	/	FALSE	1707249517	_kdt	%7B%22t%22%3A1675713516556%2C%22i%22%3A%22378a221f6b562d53a442b7f1b73de2f088560d36%22%7D
+.spotify.com	TRUE	/	TRUE	1707249728	_hjSessionUser_444446	eyJpZCI6IjM2NzM2YTcxLWFmYmYtNTRhMi05Y2YzLWJmYzAzY2QzYmExNCIsImNyZWF0ZWQiOjE2NzU3MTM3Mjc5NTUsImV4aXN0aW5nIjpmYWxzZX0=
+.spotify.com	TRUE	/	FALSE	1707529686	_cs_id	b3179d30-c0e7-a2cd-e8a5-dde9d03f58a8.1673365686.2.1675713749.1675713383.1.1707529686728
+.spotify.com	TRUE	/	FALSE	1710273829	_ga_S35RN5WNT2	GS1.1.1675713383.2.1.1675713829.60.0.0
+.spotify.com	TRUE	/	TRUE	1712716305	sp_m	br-pt
+.spotify.com	TRUE	/	TRUE	1710813228	_hjSessionUser_3321767	eyJpZCI6ImRkMmZlYjg5LTExZjktNTQxMy05OWE5LTcwMzQxZDU0NjNmZSIsImNyZWF0ZWQiOjE2NzUxNzg1NzIwMjYsImV4aXN0aW5nIjp0cnVlfQ==
+.spotify.com	TRUE	/	TRUE	1684003023	sp_gaid	0088fc2dd64ce7beab39a328b92a4e24bd71963db3f8cedfcb3af8
+.spotify.com	TRUE	/	FALSE	1713898209	_ga_LJDH9SQRHZ	GS1.1.1679337375.1.1.1679338209.0.0.0
+.spotify.com	TRUE	/	FALSE	1680895209	_gid	GA1.2.685014741.1680666097
+.spotify.com	TRUE	/	FALSE	1715233947	_ga_ZWRF3NLZJZ	GS1.1.1680673947.3.0.1680673947.0.0.0
+.spotify.com	TRUE	/	TRUE	1680895198	sp_landing	https%3A%2F%2Fwww.spotify.com%2Fbr-pt%2F
+.spotify.com	TRUE	/	FALSE	1714995507	_scid_r	77dc6cdd-2e18-4137-9546-0afe1071a2ae
+.spotify.com	TRUE	/	FALSE	1715368809	_ga_ZWG1NSHWD8	GS1.1.1680808809.50.0.1680808809.0.0.0
+.spotify.com	TRUE	/	FALSE	1715368809	_ga	GA1.2.2056031825.1667159851
+.spotify.com	TRUE	/	FALSE	1680808869	_gat_UA-5784146-31	1
+.spotify.com	TRUE	/	FALSE	1712344812	OptanonConsent	isIABGlobal=false&datestamp=Thu+Apr+06+2023+16%3A20%3A12+GMT-0300+(Hor%C3%A1rio+Padr%C3%A3o+de+Bras%C3%ADlia)&version=6.26.0&hosts=&landingPath=NotLandingPage&AwaitingReconsent=false&groups=s00%3A1%2Cf00%3A1%2Cm00%3A1%2Ct00%3A1%2Ci00%3A1%2Cf11%3A1
+accounts.spotify.com	FALSE	/	TRUE	1702682654	__Host-device_id	AQBUzFksRYHFSIPGjGscYXACEJX3yIX-CC8sw3GZgyDp3e0mdm_aJdpTH5J-2eKWGFaiDYdYWsPJH6_pET5r73ZObL_onDj62Dg
+community.spotify.com	FALSE	/	TRUE	1695117372	LithiumCookiesAccepted	0
+community.spotify.com	FALSE	/	TRUE	1695117401	VISITOR_BEACON	~2iFJjOXhCtNaisMEA~eLv-tvAQ_lPOleKQQuJDBj0QosDoqAaY3xktVvRNoaIm0fxWuXEG5WxoQF2bTcI8kH5ViTA_xM2a7CNpaUggxQ..
+community.spotify.com	FALSE	/	TRUE	1695118002	LithiumVisitor	~2I374M8hznmbyhnD3~r-_DvdOOBEzTkDoC1W-YoB5ce04v2GjWvDpY3qYf5ZJByJyOtSWMQHHmXXMAnXrrQAb7hMneGzzCMwkSK7Gdpg..
+open.spotify.com	FALSE	/	FALSE	1702309345	_scid	77dc6cdd-2e18-4137-9546-0afe1071a2ae
+open.spotify.com	FALSE	/	TRUE	1683400805	sp_pfhp	2c2ccb58-8a92-4713-a1c0-8b43b3090b49
+open.spotify.com	FALSE	/	FALSE	0	sss	1
+www.spotify.com	FALSE	/	FALSE	1707925773	wcs_bt	s_dc9fb319a19:1673365773
+www.spotify.com	FALSE	/	TRUE	1707249554	ravelinDeviceId	rjs-64b228d7-43d1-49bc-b1cc-163a5cdd1813

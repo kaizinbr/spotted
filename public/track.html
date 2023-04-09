@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <!-- css.gg -->
+    <link href='https://css.gg/css' rel='stylesheet'>
+    <link rel="stylesheet" href="resources/css/modal.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Spotted</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1 id="logo">spotted</h1>
+            <div class="menu">
+                <ul>
+                    <li id="">
+                        <a href="/home">
+                            <i class='bx bx-home-alt'></i>
+                            Home
+                        </a>
+                    </li>
+                    <li id="selected">
+                        <a href="/link">
+                            <div class="sided-pointer"></div>
+                            <i class='bx bx-link'></i>
+                            Seu link
+                        </a>
+                    </li>
+                    <li id="">
+                        <a href="#">
+                            <i class='bx bx-history'></i>
+                            Histórico
+                        </a>
+                    </li>
+                </ul>
+                <div class="option">
+                    <hr>
+                    <ul>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Ajuda</a></li>
+                        <li><a href="#">Me compre um suco</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="put-link">
+            <h1>
+                Baixe músicas, álbuns e playlists do Spotify!
+            </h1>
+            <h3>Copie e cole os links aqui</h3>
+
+            <form action="post">
+                <input autocomplete="off" type="url" name="url" id="url" placeholder="Spotify Link">
+                <input autocomplete="off" type="url" name="ytLink" id="ytLink" placeholder="Youtube Link">
+                <button type="button" class="dl">Baixar</button>
+            </form>
+
+            <!-- <div class="box">
+                
+            </div>
+
+    <script type="module">
+        const button = document.querySelector('button');
+        const sideBtn = document.querySelector('.sideB');
+        const url = document.querySelector('#url');
+        const sideUrl = document.querySelector('#sideUrl');
+        const ytUrl = document.querySelector('#ytLink');
+        button.addEventListener('click', () => {
+            statusCheck();
+
+            fetch('http://localhost:3000/dl', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    url: url.value,
+                    ytUrl: ytUrl.value
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                putLinks(data);
+            })
+            // break
+        });
+
+        sideBtn.addEventListener('click', () => {
+            statusCheck();
+
+            fetch('http://localhost:3000/dl', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    url: sideUrl.value,
+                    ytUrl: ytUrl.value
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                putLinks(data);
+            })
+            // break
+        });
+
+        function putLinks(songData){
+            const box = document.querySelector('.box');
+            box.insertAdjacentHTML('beforeend', `<img src="${songData.image}"></img>`);
+            for (const item of songData.items){
+                if (item.data == undefined) {
+                    const link = `<a href="${item.link}" target="_blank" rel="noopener noreferrer">(${songData.type}) ${item.name}</a> <br>` 
+                box.insertAdjacentHTML('beforeend', link);
+                } else{
+                    const link = `<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.name} - ${item.data.artists[0]}</a> <br>` 
+                    box.insertAdjacentHTML('beforeend', link);
+                }
+            }
+        }
+
+        async function fetchData () {
+            
+            const data = await fetch('http://localhost:3000/listener/status', {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log("Status:",data.status);
+                console.log("Message:", data.message.text);
+
+                // const status = data.status == 0 ? true : false;
+                // console.log(status, 'linha 64');
+                return data;
+            })
+
+            return data;
+        }
+
+        // async function checkReq () {
+        //     let status1 = false;
+        //     setTimeout(
+        //     async () => {
+        //         // await fetchData()
+        //         // console.log('mudou o status')
+        //         status1 = await fetchData();
+        //         console.log(status1, 'linha 76');
+        //     }
+        //         , 5000)
+        //     return status1;
+        // }
+
+        async function statusCheck() {
+            // let status = await checkReq();
+            var intervalID = window.setInterval(await myCallback, 2000);
+
+            async function myCallback() {
+                console.log('mudou o status')
+                let status = await fetchData();
+                if (status.status == 2) {
+                    clearInterval(intervalID);
+                }
+                console.log(`O status atual é ${status.message.text}`);
+            }
+
+            // console.log(status);
+            // do {
+            //     status = await (await checkReq());
+            //     console.log(status, 'status');
+            // } while (status == true);
+                       
+        };
+        // console.log(await checkReq());
+        // await statusCheck()
+    </script> -->
+        </div>
+
+        <div class="box" id="download">
+            <div class="box-header">
+                <div class="cover">
+                    <img class="main-cover" src="https://i.scdn.co/image/ab67616d0000b27346c28fd13126fd9428625411">
+                    <img class="blurred" src="https://i.scdn.co/image/ab67616d0000b27346c28fd13126fd9428625411">
+                </div>
+                <div class="info">
+                    <h1 id="name"></h1>
+                    <div class="sub">
+                        <h3 id="owner"></h3>
+                        <!-- <h3>&#183</h3>
+                        <i class='bx bxl-spotify'></i> -->
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="box-body">
+                
+                <!-- <div class="dl-bx">
+                    <div class="infos">
+                        <div class="number">
+                            <h4>2</h4>
+                        </div>
+                        <div class="title info">
+                            <h4 class="">Kitsch</h4>
+                        </div>
+                        <div class="artist info">
+                            <h4 class="">IVE</h4>
+                        </div>
+                        <div class="track-info info">
+                            <i class='bx bx-info-circle'></i><h4>Detalhes</h4>
+                        </div>
+                    </div>
+                    <div class="dl-btn">
+                        <a href="/song/download/PURPLE KISS/memeM/Pretty Psycho.mp3" target="_blank" rel="noopener noreferrer"><i class='bx bx-down-arrow-alt'></i> Download</a>
+                    </div>                    
+                </div>
+                <div class="dl-bx">
+                    <div class="infos">
+                        <div class="number">
+                            <h4>2</h4>
+                        </div>
+                        <div class="title info">
+                            <h4 class="">Pretty Psycho</h4>
+                        </div>
+                        <div class="artist info">
+                            <h4 class="">PURPLE KISS</h4>
+                        </div>
+                        <div class="track-info info">
+                            <i class='bx bx-info-circle'></i><h4>Detalhes</h4>
+                        </div>
+                    </div>
+                    <div class="dl-btn">
+                        <a href="/song/download/PURPLE KISS/memeM/Pretty Psycho.mp3" target="_blank" rel="noopener noreferrer"><i class='bx bx-down-arrow-alt'></i> Download</a>
+                    </div>                    
+                </div> -->
+            </div>
+
+            <br>
+        </div>
+    </main>
+
+    <div id="modal" class="">
+        <div>                
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Metadados</h1>
+                    <button>
+                        <i class='bx bx-x' id="close"></i>
+                    </button>
+                </div>
+                <hr>
+                <div class="modal-body">
+                    <div class="cover">
+                        <img class="main-cover" src="https://i.scdn.co/image/ab67616d0000b27346c28fd13126fd9428625411">
+                        <img class="blurred" src="https://i.scdn.co/image/ab67616d0000b27346c28fd13126fd9428625411">
+                    </div>
+                    <div class="info">
+
+                        
+                    </div>
+                </div>
+            </div>          
+        </div>
+    </div>
+
+    <script src="resources/js/modal.js"></script>
+    <script src="resources/js/app.js"></script>
+</body>
+
+</html>

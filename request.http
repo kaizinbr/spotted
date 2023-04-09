@@ -1,0 +1,33 @@
+## POST testar
+
+
+# POST http://localhost:3000/dl
+# Content-Type: application/json
+
+# {
+#     "url": "https://open.spotify.com/track/1QpwvWMQGdOgA8MXXfgs4H?si=b43f2aff67544294",
+#     "ytUrl": "https://www.youtube.com/watch?v=mh3LDT23AaM"
+
+# }
+
+## POST testar
+
+
+# POST http://localhost:3000/listener/status
+# Content-Type: application/json
+
+# {
+#     "status": 0,
+#     "message": {
+#         "text": "Inativo",
+#         "item": "itemName",
+#         "current": "1",
+#         "total": "6"
+#     }
+# }
+
+## GET testar
+
+
+GET http://spotify.link/0BTAeYtumyb
+# https://spotify.link/ddqgnN3pkyb
