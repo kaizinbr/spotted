@@ -1,5 +1,7 @@
-# Spotify Downloader 
-<p align="center">
+# Spotted
+
+Em construção! (Um trabalho sobre a aplicação de [Swapnil Soni](https://github.com/SwapnilSoni1999))
+<!-- <p align="center">
   <img src="./logo.png" height="200px"/>
   <br><br>
   <b>Download audio files from spotify links(Based on: youtube-dl)</b>
@@ -122,4 +124,4 @@ and all the contributors for PR, suggestions and testing :love:
 
 #### License
 
-MIT © [Swapnil Soni](https://github.com/SwapnilSoni1999)
+MIT © [Swapnil Soni](https://github.com/SwapnilSoni1999) -->
