@@ -6,7 +6,7 @@ import urlParser from "./util/url-parser.js";
 import linkAndZip from "./util/link-generator.js";
 import delFile from "./util/del.js";
 import cookieParser from "cookie-parser";
-// import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer';
 import run from './cli.js';
 // import { totalTracks as total } from "./util/runner.js";
 
@@ -28,26 +28,33 @@ let message = {
 
 router.use(cookieParser());
 
-// router.get('/spotify/link', async (req, res) => {
-//     const browser = await puppeteer.launch();
-//     const page = await browser.newPage();
-//     await page.goto('https://spotify.app.link/ddqgnN3pkyb');
-//     const pageData = await page.evaluate(() => {
+router.get('/spotify/link', async (req, res) => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto('https://spotify.link/ddqgnN3pkyb');
+    const pageData = await page.evaluate(() => {
         
-//         return {
-//         link: document.querySelector("body").innerHTML,
-//         link2: document.querySelector('#seo').innerHTML,
-//         };
-//     });
-//     // console.log(element)
+        return {
+        link: document.querySelector("body").innerHTML,
+        link2: document.querySelector('#seo').innerHTML,
+        };
+    });
+    // console.log(element)
     
-//     await browser.close();
+    await browser.close();
     
-//     res.send({
-//         "link": pageData.link,
-//         "link2": pageData.link2,
-//     })
-// });
+    res.send({
+        "link": pageData.link,
+        "link2": pageData.link2,
+    })
+
+    const token = await (await fetch('https://open.spotify.com/get_access_token?reason=transport&productType=web_player')).json();
+    // const trackId = await (await fetch('https://spotify.link/0BTAeYtumyb')).json();
+    // console.log(token, trackId)
+
+    // res.json(token, trackId)
+
+});
 
 router.post('/dl', async (req, res) => {
     
@@ -91,7 +98,7 @@ router.get('/:type/download/:itemName', async (req, res) => {
     const itemName = req.params.itemName.replace(/%20/g, ' ');
     const type = req.params.type;
 
-	var file = path.join(__dirname, `/data/music/zip-files/${type}/${itemName}`);	
+	var file = path.join(__dirname, `/data/zip-files/${type}/${itemName}`);	
 	res.download(file); 
 });
 

@@ -116,7 +116,8 @@ const downloadList = async (list, type) => {
                 songData.items[currentCount - 1].data.lyrics = lyrics;
 			}
 			nextItem.failed = !downloadSuccessful;
-            delFile(outputFilePath);
+            // delFile(outputFilePath);
+            // setTimeout(() => delFile(outputFilePath), 10000 * 3600)
 		} else {
             console.log('está em cache')
 			const itemId = nextItem.id;
@@ -161,7 +162,7 @@ const downloadList = async (list, type) => {
             //     }
             // }
             // status(update);
-            delFile(outputFilePath);
+            // delFile(outputFilePath);
 		}
 		nextItem.cached = true;
 	}

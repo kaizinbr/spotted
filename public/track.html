@@ -71,7 +71,6 @@
             <!-- <div class="box">
                 
             </div>
-
     <script type="module">
         const button = document.querySelector('button');
         const sideBtn = document.querySelector('.sideB');
@@ -80,7 +79,6 @@
         const ytUrl = document.querySelector('#ytLink');
         button.addEventListener('click', () => {
             statusCheck();
-
             fetch('http://localhost:3000/dl', {
                 method: 'POST',
                 headers: {
@@ -98,10 +96,8 @@
             })
             // break
         });
-
         sideBtn.addEventListener('click', () => {
             statusCheck();
-
             fetch('http://localhost:3000/dl', {
                 method: 'POST',
                 headers: {
@@ -119,7 +115,6 @@
             })
             // break
         });
-
         function putLinks(songData){
             const box = document.querySelector('.box');
             box.insertAdjacentHTML('beforeend', `<img src="${songData.image}"></img>`);
@@ -133,7 +128,6 @@
                 }
             }
         }
-
         async function fetchData () {
             
             const data = await fetch('http://localhost:3000/listener/status', {
@@ -144,15 +138,12 @@
             .then(data => {
                 console.log("Status:",data.status);
                 console.log("Message:", data.message.text);
-
                 // const status = data.status == 0 ? true : false;
                 // console.log(status, 'linha 64');
                 return data;
             })
-
             return data;
         }
-
         // async function checkReq () {
         //     let status1 = false;
         //     setTimeout(
@@ -165,11 +156,9 @@
         //         , 5000)
         //     return status1;
         // }
-
         async function statusCheck() {
             // let status = await checkReq();
             var intervalID = window.setInterval(await myCallback, 2000);
-
             async function myCallback() {
                 console.log('mudou o status')
                 let status = await fetchData();
@@ -178,7 +167,6 @@
                 }
                 console.log(`O status atual é ${status.message.text}`);
             }
-
             // console.log(status);
             // do {
             //     status = await (await checkReq());

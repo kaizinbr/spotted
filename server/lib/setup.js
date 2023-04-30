@@ -50,8 +50,6 @@ const ffmpegSetup = function (platform_name) {
 };
 
 export function startup() {
-    console.log('começou hein')
-    // setup ffmpeg
     ffmpegSetup(process.platform);
     console.log('a travada n foi aqui')
     process.on('SIGINT', () => {

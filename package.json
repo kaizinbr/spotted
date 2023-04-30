@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Type spotifydl for help.\"",
-    "start": "./cli.js",
+    "start": "node server/index.js",
     "dev": "nodemon server/index.js",
     "db:up": "node server/database/load.js",
     "db:down": "rm server/database/db.sqlite"
@@ -47,7 +47,7 @@
     "spotify-web-api-node": "^5.0.0",
     "string-similarity": "^4.0.4",
     "yt-search": "^2.10.3",
-    "ytdl-core": "^4.9.1"
+    "ytdl-core": "^4.11.4"
   },
   "xo": {
     "space": true,

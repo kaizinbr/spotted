@@ -28,6 +28,9 @@
 
 ## GET testar
 
+GET http://localhost:3000/spotify/link
+
+## GET testar
 
 GET http://spotify.link/0BTAeYtumyb
 # https://spotify.link/ddqgnN3pkyb

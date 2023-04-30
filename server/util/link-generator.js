@@ -15,11 +15,13 @@ export default songData => {
 
     if (songData.type != 'song' && songData.items.length > 1) {
         const zip = new AdmZip();
-        const zipPath = `C:/Users/lkaio/Documents/code-area/demo-spot/server/data/music/zip-files/${songData.type}/${songData.name}.zip`;
+        const zipPath = `C:/Users/lkaio/Documents/code-area/demo-spot/server/data/zip-files/${songData.type}/${songData.name}.zip`;
 
         for (let i = 0; i < songData.items.length; i++) {
             // adiciona os links para download
             const path = songData.items[i].path.split(`\\`);
+            // const folderPath = path.slice(0, path.length - 1).join('\\');
+            // console.log('FOLDER', folderPath)
             const name = path[path.length - 1];
             const artist = path[path.length - 3];
             const album = path[path.length - 2];

@@ -208,6 +208,8 @@ async function check() {
     return data;
 }
 
+check();
+
 // impede que o enter dê submit no form e chame a função do btn
 document.addEventListener("keydown", function(e) {
     if(e.keyCode === 13) {

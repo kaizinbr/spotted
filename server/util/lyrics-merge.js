@@ -4,15 +4,6 @@ import { logInfo } from './log-helper.js';
 
 export default function mergeLyrics (filepath, lyrics) {
 
-    // const filepath = 'C:/Users/lkaio/Documents/code-area/demo-spot/server/data/music/Melanie Martinez/DEATH/DEATH.mp3'
-
-    // const tags = {
-    //     title: "Tomorrow",
-    //     artist: "Kevin Penkin",
-    //     album: "TVアニメ「メイドインアビス」オリジナルサウンドトラック",
-    //     APIC: "./example/mia_cover.jpg",
-    //     TRCK: "27"
-    // }
     logInfo('Juntando letra')
 
     // const tags = NodeID3.read(file)
