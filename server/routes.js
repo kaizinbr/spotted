@@ -8,6 +8,7 @@ import delFile from "./util/del.js";
 import cookieParser from "cookie-parser";
 // import puppeteer from 'puppeteer';
 import run from './cli.js';
+import cloud from './cloud-auth.js';
 // import { totalTracks as total } from "./util/runner.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -27,6 +28,19 @@ let message = {
     };
 
 router.use(cookieParser());
+
+router.get('/', async (req, res) => {
+    await cloud();
+});
+
+router.get('/auth/callback', async (req, res) => {
+    const code = req.query.code;
+    const state = req.query.state;
+    const error = req.query.error;
+    
+    console.log('code', code);
+    res.send({code: code, state: state, error: error})
+});
 
 // router.get('/spotify/link', async (req, res) => {
 //     const browser = await puppeteer.launch();
