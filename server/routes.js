@@ -3,7 +3,7 @@ import 'dotenv/config'
 import path from 'path';
 import { fileURLToPath } from 'url';
 import urlParser from "./util/url-parser.js";
-import linkAndZip from "./util/link-generator.js";
+import { linkAndZip } from "./util/zipper.js";
 import delFile from "./util/del.js";
 import cookieParser from "cookie-parser";
 import puppeteer from 'puppeteer';

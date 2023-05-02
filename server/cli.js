@@ -34,7 +34,7 @@ async function run(inputs){
     startup();
     try {
         dlList = await Runner(inputs)
-        console.log('dllist',dlList)
+        // console.log('dllist',dlList)
         // .then(() => process.exit(0));
     } catch (error) {
         console.log('Something went wrong!');

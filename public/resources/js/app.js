@@ -208,7 +208,7 @@ async function check() {
     return data;
 }
 
-check();
+// check();
 
 // impede que o enter dê submit no form e chame a função do btn
 document.addEventListener("keydown", function(e) {

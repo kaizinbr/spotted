@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import getLinks from './get-link.js';
-import { cleanOutputPath } from './filters.js';
+import { cleanOutputPath, rightNow, addZero } from './filters.js';
 import Constants from './constants.js';
 import downloader from '../lib/downloader.js';
 import { writeId, findId } from '../lib/cache.js';
@@ -12,6 +12,7 @@ import {
 	getEpisode, getShowEpisodes, getSavedShows,
 	getSavedAlbums, getSavedPlaylists, getSavedTracks, getAlbum, getLyrics
 } from './get-songdata.js';
+// import { copyFile } from 'fs';
 import { logSuccess, logInfo, logFailure } from './log-helper.js';
 import delFile from "./del.js";
 import updateTotal from './updater.js';
@@ -35,9 +36,17 @@ const itemOutputDir = item => {
 	);
 };
 
+const dlPath = item => {
+	const outputDir = path.normalize(output);
+	// console.log(outputDir);
+	return outputOnly ? outputDir : path.join(
+		outputDir,
+		cleanOutputPath(item.artists[0]),
+		cleanOutputPath(item.album_name),
+	);
+};
+
 const downloadList = async (list, type) => {
-    // const outputPath 
-    console.log("name", list.name)
     const songData = {
         "name": list.name,
         "main_name": list.main_name,
@@ -46,11 +55,25 @@ const downloadList = async (list, type) => {
         "items": [],
         "image": list.image || GENERIC_IMAGE,
     };
+
 	list.name = list.name.replace('/', '-');
 	const totalItems = list.items.length;
 	logInfo(`Downloading: ${list.name}`);
 	logInfo(`Total Items: ${totalItems}`);
+
 	let currentCount = 0;
+    
+    let date = rightNow();
+    let zipPath = path.resolve(
+        `C:/Users/lkaio/Documents/code-area/demo-spot/server/data/downloads`,
+        date + '/' + list.name,
+    );
+    fs.mkdirSync(zipPath, { recursive: true })
+    songData.zipPath = path.resolve(
+        `C:/Users/lkaio/Documents/code-area/demo-spot/server/data/downloads`,
+        date,
+    );
+    
 	for (const nextItem of list.items) {
 		currentCount++;
         // songData = nextItem;
@@ -71,15 +94,15 @@ const downloadList = async (list, type) => {
 				].join('\n'),
 			);
             
-            const update = {
-                "status": 1,
-                "message": {
-                    "text": `Baixando ${itemName}...`,
-                    "item": itemName,
-                    "current": currentCount,
-                    "total": totalItems
-                }
-            }
+            // const update = {
+            //     "status": 1,
+            //     "message": {
+            //         "text": `Baixando ${itemName}...`,
+            //         "item": itemName,
+            //         "current": currentCount,
+            //         "total": totalItems
+            //     }
+            // }
             // status(update);
             // console.log('update', nextItem)
 
@@ -99,21 +122,27 @@ const downloadList = async (list, type) => {
 
 			const outputFilePath = path.resolve(
 				itemDir,
-				`${fileNameCleaned}.mp3`,
+				`${addZero(nextItem.track_number)}.${fileNameCleaned}.mp3`,
 			);
+             
             songData.items.push({
                 "name": itemName,
                 "data": nextItem,
                 "path": outputFilePath
             });
+
 			//create the dir if it doesn't exist
 			fs.mkdirSync(itemDir, { recursive: true });
+
 			const downloadSuccessful = await downloader(ytLinks, outputFilePath);
 			if (downloadSuccessful) {
 				const lyrics = await mergeMetadata(outputFilePath, nextItem);
 				writeId(itemDir, itemId);
                 // console.log(songData[currentCount - 1], 'songData[currentCount].data')
                 songData.items[currentCount - 1].data.lyrics = lyrics;
+
+                fs.copyFileSync(`${itemDir}/${addZero(nextItem.track_number)}.${fileNameCleaned}.mp3`, `${zipPath}/${addZero(nextItem.track_number)}.${fileNameCleaned}.mp3`);
+
 			}
 			nextItem.failed = !downloadSuccessful;
             // delFile(outputFilePath);
